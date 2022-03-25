@@ -22,22 +22,34 @@ bool isPrime(int n){
 }
 
 int primeCount(long n) {
-    int count=0;
-    if(n%2==0){
-      count++;
-    }
-    for(long i=3; i < n/2; i+=2){      //find factors
-        //cout << "For "<<n<<": is " <<i <<" a prime factor?"<< endl;
-        if(n%i==0 && isPrime(i)) {      // is a prime factor
-          cout<<"prime "<<i<<endl;
-          count++;
+    //cout << "Doing "<<n<<endl;
+    int max = 0;
+    for(long i=1; i <= n; i++){      //find factors
+        int c=0;
+        if(i%2==0){
+          c++;
         }
+        //cout << i <<endl;
+        for(long j=3;j<sqrt(i);j+=2){
+          if(i%j==0) {      // is a prime factor
+            if(isPrime(j)){
+              c++;
+            }
+          }       
+        }
+        if(c>max)
+          max=c;
+        //cout <<"checked: "<<i<<". c is "<<c<<"\n";
     }
-    return count;
+    //cout <<"ending"<<"\n";
+    return max;
 }
 
 int main()
 {
+
+  //cout << 13%7<<"\n";
+
   int num;
   cin>>num;
   long ans[num];
@@ -48,6 +60,22 @@ int main()
   }
   for(int i=0;i<num;i++)
     cout<< ans[i] <<"\n";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
   for(int i=0;i<100;i++)
@@ -57,4 +85,3 @@ int main()
   cin >> my_num;
   cout <<my_num<<"\n";
   return 0; */
-}
