@@ -14,7 +14,7 @@ bool isPrime(int n){
     if (n <= 1)
         return false;
     // Check from 2 to n-1
-    for (int i = 2; i < n; i++)
+    for (int i = 2; i*i <= n; ++i)
         if (n % i == 0)
             return false;
   
@@ -22,14 +22,13 @@ bool isPrime(int n){
 }
 
 int primeCount(long n) {
-    //cout << "Doing "<<n<<endl;
     int max = 0;
     for(long i=1; i <= n; i++){      //find factors
+        cout << i << endl;
         int c=0;
         if(i%2==0){
           c++;
         }
-        //cout << i <<endl;
         for(long j=3;j<sqrt(i);j+=2){
           if(i%j==0) {      // is a prime factor
             if(isPrime(j)){
@@ -39,9 +38,7 @@ int primeCount(long n) {
         }
         if(c>max)
           max=c;
-        //cout <<"checked: "<<i<<". c is "<<c<<"\n";
     }
-    //cout <<"ending"<<"\n";
     return max;
 }
 
