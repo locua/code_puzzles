@@ -23,11 +23,10 @@ def max_unique_primes(n):
   c=1
   prim=3
   while(prod*prim <=n):
-    print(prim)
-    prim+=2
     if gcd(prod,prim)==1:
       prod*=prim
       c+=1
+    prim+=2
   return c
 
 import sys
