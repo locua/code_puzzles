@@ -4,27 +4,23 @@
 #include <vector>
 #include <bits/stdc++.h>
 
-#define ll unsigned long long
+#define ll unsigned long long int
 
 using namespace std;
 
-unsigned long long int gcd(unsigned long long int a, unsigned long long int b)
-{
-
+ll gcd(ll a, ll b){
   while (b) {
-    unsigned long long int t = b;
-
+    ll t = b;
     b = a % b;
     a = t;
   }
   return a;
 }
 
-unsigned int max_unique_primes(unsigned long long int n)
-{
+unsigned int max_unique_primes(ll n){
   unsigned int count;
-  unsigned long long int prod;
-  unsigned long long int prim;
+  ll prod;
+  ll prim;
 
   if (n < 2)
     return 0;
@@ -45,7 +41,7 @@ int main()
 {
   int q;
   cin>>q;
-  unsigned long long int ans[q];
+  ll ans[q];
   for(int i=0;i<q;i++){
     long x;
     cin >> x;
