@@ -21,6 +21,7 @@ int main(){
     printf("%d",ndigit[i]);
   printf(" // Print out values from an array of ints");
   printf("\n%d\nNow type some characters and if u hit the EOF i'll quit and tell you how many u typed\n",EOF);
+  printf("^D to enter EOF\n");
   while((c=getchar())!=EOF){
     //putchar(c); //prints a character
     ++nc;
