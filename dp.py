@@ -1,6 +1,7 @@
+
 # Print the max number of prime factors for q integers.
 # The first line is q.
-""" input:
+""" Example input:
 6
 1
 2
@@ -16,6 +17,9 @@ def gcd(a, b):
     a=t    
   return a
 
+#gcd(16,36)
+#import sys;sys.exit(0)
+
 def max_unique_primes(n):
   if(n<2):
     return 0
@@ -29,7 +33,6 @@ def max_unique_primes(n):
     prim+=2
   return c
 
-import sys
 q=input()
 inputs=[]
 for i in range(int(q)):
@@ -38,7 +41,4 @@ for i in range(int(q)):
 
 for i in inputs:
   print(max_unique_primes(i))
-
-
-#print(max_unique_primes(100000000))
 
