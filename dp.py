@@ -17,8 +17,8 @@ def gcd(a, b):
     a=t    
   return a
 
-#gcd(8,50)
-#import sys;sys.exit(0)
+gcd(8,50)
+import sys;sys.exit(0)
 
 def max_unique_primes(n):
   if(n<2):
