@@ -1,6 +1,6 @@
-* Some solutions to mathematical programming puzzles
+* Some solutions to programming puzzles
 - Algorithms and data stuff
 - Fun things
-- C++/C baby
+- C++/C learning baby
 
 ...we learn how to make computers go fast...
