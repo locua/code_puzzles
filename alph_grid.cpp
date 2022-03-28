@@ -4,7 +4,6 @@
 using namespace std;
 
 std::string grid(int n) {
-  // your code
   string out="";
   string alph="abcdefhijklmnopqrstuvwxyz";
   if(n==1)
