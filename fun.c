@@ -20,9 +20,7 @@ int main(){
   for(int i=0;i<10;i++)
     printf("%d",ndigit[i]);
   printf(" // Print out values from an array of ints");
-
   printf("\nOur power function in action: power(2,8)=%d\n",power(2,8));
-
   printf("\n%d\nNow type some characters and if u hit the EOF i'll quit and tell you how many u typed\n",EOF);
   printf("^D to enter EOF\n");
   while((c=getchar())!=EOF){
