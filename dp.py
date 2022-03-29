@@ -16,8 +16,8 @@ def gcd(a, b):
     a=t    
   return a
 
-gcd(4,8)
-import sys;sys.exit(0)
+#gcd(4,8)
+#import sys;sys.exit(0)
 
 def max_unique_primes(n):
   if(n<2):
@@ -33,10 +33,10 @@ def max_unique_primes(n):
   return c
 
 q=input()
-inputs=[]
+l=[]
 for i in range(int(q)):
   n=input()
-  inputs.append(int(n)) 
+  l.append(int(n)) 
 
-for i in inputs:
+for i in l:
   print(max_unique_primes(i))
