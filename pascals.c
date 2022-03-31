@@ -21,11 +21,11 @@ int * pline(int n){
 
 /* Pascals triangle generator using dynamic memory allocation*/
 int** triangle(int h){
-  int **o = (int **) malloc(h * sizeof(int *));
-  for(int n=0;n<h;n++){
+  int **o = (int **) malloc((h+1) * sizeof(int *));
+  for(int n=0;n<=h;n++){
     int c=n+1;
     o[n] = (int *) malloc(c * sizeof(int));
-    for(int r=0;r<n;r++){
+    for(int r=0;r<=n;r++){
       o[n][r]=fact(n)/(fact(r)*(fact(n-r)));
     }
   }
@@ -34,15 +34,15 @@ int** triangle(int h){
 
 
 int main(){
-  int n=13;
-  int ** t = triangle(n); 
-  for(int i=0;i<n;i++){
-    for(int j=0;j<i;j++){
+  int N=20;
+  int ** t = triangle(N); 
+  for(int i=0;i<=N;i++){
+    for(int j=0;j<=i;j++){
       printf("%d ",t[i][j]);
     }
     printf("\n");
   }
-  for(int i=0;i<n;i++)
+  for(int i=0;i<=N;i++)
     free(t[i]);
   free(t);
 
