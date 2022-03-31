@@ -23,8 +23,17 @@ int** triangle(int h){
   return o;
 }
 
+int * pline(int n){
+  int m=n+1;
+  int * o = (int *) malloc(m*sizeof(int));
+  for(int r=0;r<=n;r++){
+    o[r]=fact(n)/(fact(r)*(fact(n-r)));
+  }
+  return o;
+}
+
 int main(){
-  int n=12;
+  int n=8;
   int ** t = triangle(n); 
   for(int i=0;i<=n;i++){
     for(int j=0;j<=i;j++){
@@ -35,5 +44,14 @@ int main(){
   for(int i=0;i<n;i++)
     free(t[i]);
   free(t);
+
+  // Just one line to investigate bug
+  int m = 12;
+  int * l = pline(m);  
+  for(int i=0;i<=m;i++){
+    printf("%d ",l[i]);
+  }
+  printf("\n");
+  free(l);
   return 0;
 }
