@@ -1,7 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define UP 100
 #define PI 3.14159 // PI yo
+
+typedef struct {
+  char * name;
+  int id; 
+} myob;
+
+int power(int base, int n);
 
 int main(){
   int x=1000;
@@ -19,7 +27,15 @@ int main(){
     ndigit[i]=i;
   for(int i=0;i<10;i++)
     printf("%d",ndigit[i]);
-  printf(" // Print out values from an array of ints");
+  
+  // Dynamic memory allocation
+  myob * o1 = (myob *) malloc(sizeof(myob)); // allocate a  new person
+  o1->name="Vladimir";                       // access o1's members
+  o1->id=48593;
+  printf("\n%s had id %d\n", o1->name, o1->id);
+  free(o1);                                  // release the data (does not delete the variable)
+  
+  printf("// Print out values from an array of ints");
   printf("\nOur power function in action: power(2,8)=%d\n",power(2,8));
   printf("\n%d\nNow type some characters and if u hit the EOF i'll quit and tell you how many u typed\n",EOF);
   printf("^D to enter EOF\n");
@@ -37,7 +53,8 @@ int main(){
   return 0;
 }
 
-int power(base,n){
+
+int power(int base, int n){
   int p=1;
   for(int i=0;i<n;++i)
     p*=base;

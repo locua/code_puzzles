@@ -7,7 +7,7 @@ std::string grid(int n) {
   string alph="abcdefhijklmnopqrstuvwxyz";
   if(n==1)
     return "a";
-  for(int i=0;i<n;i++){
+  for(int i;i<n;i++){
     for(int j=0;j<n;j++){
       int ix=i%26;
       out+=alph[(ix+j)%26];
