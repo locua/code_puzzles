@@ -41,7 +41,7 @@ int main(){
     }
     printf("\n");
   }
-  for(int i=0;i<n;i++)
+  for(int i=0;i<=n;i++)
     free(t[i]);
   free(t);
 
