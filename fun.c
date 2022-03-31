@@ -32,8 +32,9 @@ int main(){
   myob * o1 = (myob *) malloc(sizeof(myob)); // allocate a  new person
   o1->name="Vladimir";                       // access o1's members
   o1->id=48593;
-  printf("\n%s had id %d\n", o1->name, o1->id);
+  printf("\n%s had id %d. Stored at: %p\n", o1->name, o1->id, o1);
   free(o1);                                  // release the data (does not delete the variable)
+
   
   printf("// Print out values from an array of ints");
   printf("\nOur power function in action: power(2,8)=%d\n",power(2,8));
@@ -49,10 +50,8 @@ int main(){
   }
   printf("\n");
   printf("Chars, words, lines: %d, %d, %d\n", nc, nw, nl); // print number of chars, words and lines
-
   return 0;
 }
-
 
 int power(int base, int n){
   int p=1;
