@@ -1,6 +1,47 @@
 #include <stdio.h>
 #include <stdint.h>
 
+uint64_t gcd(uint64_t a,uint64_t b){
+    while(b){
+        uint64_t t=b;
+        b=a%b;
+        a=t;
+    }
+    return a;
+}
+
+uint64_t nCr(uint64_t n, uint64_t r){
+  uint64_t p, k;
+  p=k=1;
+  if (n-r<r) 
+    r=n-r;
+  if(r!=0){
+    while(r){
+      p*=n;
+      k*=r;
+      uint64_t m=gcd(p,k);
+      p/=m;
+      k/=m;
+      n--;
+      r--;
+    }
+  } else
+    return 1;
+  return p;
+}
+
+int main(){
+  uint64_t N=20;
+  for(uint64_t n=0;n<=N;n++){
+    for(uint64_t r=0;r<=n;r++)
+      printf("%ld ",nCr(n,r));
+    printf("\n");
+  }
+  return 0;
+}
+
+
+/*
 uint64_t ncr(uint64_t N, uint64_t R){
   uint64_t a,b,n,r,h,d,t;
   short even = 0;
@@ -38,43 +79,4 @@ uint64_t ncr(uint64_t N, uint64_t R){
   return a;
 }
 
-
-uint64_t gcd(uint64_t a,uint64_t b){
-    while(b){
-        uint64_t t=b;
-        b=a%b;
-        a=t;
-    }
-    return a;
-}
-
-
-uint64_t nCr(uint64_t n, uint64_t r){
-  uint64_t p, k;
-  p=k=1;
-  if (n-r<r) 
-    r=n-r;
-  if(r!=0){
-    while(r){
-      p*=n;
-      k*=r;
-      uint64_t m=gcd(p,k);
-      p/=m;
-      k/=m;
-      n--;
-      r--;
-    }
-  } else
-    return 1;
-  return p;
-}
-
-int main(){
-  uint64_t N=20;
-  for(uint64_t n=0;n<=N;n++){
-    for(uint64_t r=0;r<=n;r++)
-      printf("%ld ",nCr(n,r));
-    printf("\n");
-  }
-  return 0;
-}
+*/ //broken 
