@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 /* Factorial function */
 int fact(int n){
@@ -8,6 +9,16 @@ int fact(int n){
     o*=(i+1);
   }
   return o;
+}
+
+uint64_t ncr(uint64_t n, uint64_t r){
+  uint64_t a,b;
+  a=b=1;
+  for(uint64_t i=n;i>r;i--)
+    a*=i;
+  for(uint64_t i=1;i<n-r;i++)
+    b*=(i+1);
+  return a/b;
 }
 
 int * pline(int n){
@@ -34,7 +45,7 @@ int** triangle(int h){
 
 
 int main(){
-  int N=20;
+  uint64_t N=22;
   int ** t = triangle(N); 
   for(int i=0;i<=N;i++){
     for(int j=0;j<=i;j++){
@@ -46,13 +57,14 @@ int main(){
     free(t[i]);
   free(t);
 
+
   // Just one line to investigate bug
   //int m = 17;
   //int * l = pline(m);  
   //for(int i=0;i<=m;i++){
   //  printf("%d ",l[i]);
   //}
-  //printf("\n");
+  printf("\n");
   //free(l);
   return 0;
 }
